@@ -16,6 +16,10 @@ const EventDisplay = (props) => {
                     </div>
                 )
 })}
+        <div>     
+            <button onClick={(e) => props.changePageNumber(e, 'down')}>Previous 10</button>
+            <button onClick={(e) => props.changePageNumber(e, 'up')}>Next 10</button>
+        </div>
         </div>
     )
 }
