@@ -9,6 +9,7 @@ import Sidebar from './components/site/Sidebar';
 
 =======
 import Location from './components/Location'
+import GetWeather from './components/WeatherData'
 
 
 
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
 
       <Location />
+<<<<<<< HEAD
 
  
 
@@ -36,6 +38,9 @@ function App() {
       </Router>
       <Footer />
 
+=======
+      <GetWeather />
+>>>>>>> maria
     </div>
   );
 };
