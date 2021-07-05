@@ -1,5 +1,7 @@
 import React, { useState} from "react"
 import EventDisplay from './TicketmasterDisplay'
+import './Ticketmaster.css'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const Ticketmaster = () => {
    
@@ -50,13 +52,15 @@ if(direction === 'up') {
         <div className="main">
             <h1>SEARCH FOR EVENTS IN YOUR AREA</h1>
             <div className="mainDiv">
-                <form onSubmit={(e) => handleSubmit(e)}>
-                    <span>Enter your search radius in miles</span>
-                    <input type="number" name="searchRadius" onChange={(e) => setSearchRadius(e.target.value)}/>
-                    <span>Optional - Enter a keyword to narrow your search</span>
-                    <input type="text" name="keyword" onChange={(e) => setKeyword(e.target.value)}/>
-                    <button className="submit">Click for events in your area</button>
-                </form>
+                <Form className="form" onSubmit={(e) => handleSubmit(e)}>
+                    <FormGroup>
+                    <Label>Enter your search radius in miles</Label>
+                    <Input type="number" name="searchRadius" onChange={(e) => setSearchRadius(e.target.value)}/>
+                    <Label>Optional - Enter a keyword to narrow your search</Label>
+                    <Input type="text" name="keyword" onChange={(e) => setKeyword(e.target.value)}/>
+                    </FormGroup>
+                    <Button className="submit" color="success">Click for events in your area</Button>
+                </Form>
                 {results.length > 0 ? <EventDisplay results={ results } changePageNumber={changePageNumber} /> : null}
         </div>
     </div>

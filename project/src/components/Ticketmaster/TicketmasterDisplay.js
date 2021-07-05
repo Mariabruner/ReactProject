@@ -1,24 +1,34 @@
 import React from 'react';
-
+import './Ticketmaster.css'
+import { 
+    Button, Card, CardDeck, CardText, CardBody, CardLink, CardTitle, CardSubtitle, CardImg, CardGroup } from 'reactstrap'
 const EventDisplay = (props) => {
     return(
         <div>
             {props.results.map(result => {
                 return (
                     <div key={result.id}>
-                    <h3>{result.name}</h3>
-                    <p>{result.dates.start.localDate}</p>
-                    <img alt="event image" src={result.images[0].url}/>
-                  
-                    <a href={result.url} target="_blank">Link</a>
+                    <CardGroup className="cards">
+                    <Card className="card" body inverse style={{ backgroundColor: '#333', borderColor: '#333'}}>
+                    <CardImg src={result.images[0].url}/> 
+                    <CardBody>
+                    <CardTitle tag="h3">{result.name}</CardTitle>
+                    <CardSubtitle tag="h5">Date: {result.dates.start.localDate}</CardSubtitle>
+                    </CardBody>
                     
+                    <CardBody>
+                    <Button href={result.url} target="_blank">Click for more info</Button>
+                    </CardBody>
+                    </Card>
+                  
+                    </CardGroup>
 
                     </div>
                 )
 })}
         <div>     
-            <button onClick={(e) => props.changePageNumber(e, 'down')}>Previous 10</button>
-            <button onClick={(e) => props.changePageNumber(e, 'up')}>Next 10</button>
+            <Button color="success"onClick={(e) => props.changePageNumber(e, 'down')}>Previous 10</Button>
+            <Button color="info" onClick={(e) => props.changePageNumber(e, 'up')}>Next 10</Button>
         </div>
         </div>
     )
