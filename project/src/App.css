@@ -73,6 +73,7 @@ footer p{
 
 .sidebar{
   display: flex;
+  text-align: right;
   background-color: #3c6c96;
   margin-top: 10px;
 }
@@ -111,4 +112,8 @@ ul {
 
 .header p {
   margin-top: 0.8em!important;
+}
+
+.italicText{
+  font-style: italic!important;
 }
