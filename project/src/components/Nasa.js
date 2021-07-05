@@ -4,18 +4,18 @@ import Location from './Location'
 
 
 const GetNasaImage = () => {
-    const [weather, setWeather] = useState()
-    const [temp, setTemp] = useState()
-    const [feelsLike, setFeelsLike] = useState()
 
-   
+    //const [weather, setWeather] = useState()
+    //const [temp, setTemp] = useState()
+    //const [feelsLike, setFeelsLike] = useState()    
+    //use {feelsLike} in context
 
     let lat = 39.767
     let lon = -86.145
 
-    const fetchResults = (curUnit) => {
-        let key = `9abe7b37b3a238440fcff0377e910c06`
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
+    const fetchResults = () => {
+        let key = `&apikey=Ay4Htt1tlGNl8EwC1oMhuwabaoVUwa2z3K5pTLxo`
+        let url = `https://api.nasa.gov/planetary/earth/imagery?lat=${lat}&lon=${lon}&appid=${key}`
 
 
         fetch(url)
@@ -31,29 +31,14 @@ const GetNasaImage = () => {
             
     }
 
-    fetchResults(curUnit)
-
-    let curUnit = "imperial";
-
-    if (curUnit === "imperial"){
+    fetchResults()
     return (
         <div>
-        <h1>Weather Conditions for the day: {weather}</h1>
-        <h1>Current Temperature: {temp} °F</h1>
-        <h1>Feels Like: {feelsLike} °F</h1>
-        <button>Switch to Celsius</button> 
+        <h1>Satellite Image for your location:</h1>
+        <h1>Put image here</h1>
         </div>
     )
-    } else if (curUnit === "metric"){
-        return(
-        <div>
-        <h1>Weather Conditions for the day: {weather}</h1>
-        <h1>Current Temperature: {temp} °C</h1>
-        <h1>Feels Like: {feelsLike} °C</h1>
-        <button>Switch to Farenheit</button> 
-        </div>
-        )
-    }
+
 }
 
 export default GetNasaImage;
