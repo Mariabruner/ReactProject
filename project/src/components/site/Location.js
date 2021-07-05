@@ -11,7 +11,9 @@ class App extends Component {
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(function(position) {
+      let lat= position.coords.latitude;
       console.log("Latitude is :", position.coords.latitude);
+      let lon= position.coords.longitude;
       console.log("Longitude is :", position.coords.longitude);
     });
   }
@@ -27,4 +29,4 @@ class App extends Component {
 
 render(<App />, document.getElementById("root"));
 
-export default App
+export default App;
