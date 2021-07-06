@@ -6,8 +6,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 
-import Location from './components/Location'
-import GetWeather from './components/WeatherData'
+
 import {
   BrowserRouter as Router
 } from 'react-router-dom'; 
@@ -19,8 +18,7 @@ function App() {
 
 
       <Header/>
-      <Location />
-      <GetWeather />
+
       <Router>
         <Sidebar />
       </Router>
