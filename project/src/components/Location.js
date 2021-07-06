@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Button} from 'reactstrap'
 
-  const App = () => {
+  const Location = () => {
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null);
 
@@ -23,5 +23,5 @@ import {Button} from 'reactstrap'
   );
 }
 
-export default App;
+export default Location
 

@@ -5,6 +5,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import './Header.css'
 
 const Header = () => {
   return (
