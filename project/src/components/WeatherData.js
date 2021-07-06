@@ -61,22 +61,26 @@ const GetWeather = () => {
     if (curUnit === "imperial") {
         return (
             <div className="mainDiv">
+                <div className="dataHolder">
                 <h1>Today's Weather Report for {county} County!</h1>
                 <br />
                 <h2>Weather Conditions for the day: {weather}</h2>
                 <h2>Current Temperature: {temp} °F</h2>
                 <h2>Feels Like: {feelsLike} °F</h2>
+                </div>
                 <button onClick={toggleUnits}>Switch to Celsius</button>
             </div>
         )
     } else if (curUnit === "metric") {
         return (
             <div className="mainDiv"> 
+            <div className="dataHolder">
                 <h1>Today's Weather Report for {county} County!</h1>
                 <br />
                 <h2>Weather Conditions for the day: {weather}</h2>
                 <h2>Current Temperature: {temp} °C</h2>
                 <h2>Feels Like: {feelsLike} °C</h2>
+                </div>
                 <button onClick={toggleUnits}>Switch to Farenheit</button>
             </div>
         )
