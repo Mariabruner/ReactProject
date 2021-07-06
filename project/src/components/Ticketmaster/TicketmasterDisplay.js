@@ -1,7 +1,7 @@
 import React from 'react';
 import './Ticketmaster.css'
 import { 
-    Button, Card, CardText, CardBody, CardLink, CardTitle, CardSubtitle, CardImg, CardGroup } from 'reactstrap'
+    Button, Card, CardText, CardBody, CardTitle, CardSubtitle, CardImg, CardGroup } from 'reactstrap'
 const EventDisplay = (props) => {
     return(
         <div>
