@@ -10,7 +10,7 @@ const Nasa = (props) => {
   const [lat, setLatitude] = useState()
   const [lon, setLongitude] = useState()
   
-  const nasaKey = process.env.REACT_APP_NASA_KEY;
+  const nasaKey = "Ay4Htt1tlGNl8EwC1oMhuwabaoVUwa2z3K5pTLxo";
   let url = `https://api.nasa.gov/planetary/earth/imagery?lon=${lon}&lat=${lat}&api_key=${nasaKey}`
 
 
