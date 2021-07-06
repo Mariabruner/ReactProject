@@ -27,7 +27,7 @@ const GetWeather = () => {
     function getPosition() {
         navigator.geolocation.getCurrentPosition(success, error)
     }
-    getPosition()
+    
 
     const fetchResults = (curUnit, lat, lon) => {
         let key = `9abe7b37b3a238440fcff0377e910c06`
@@ -61,6 +61,7 @@ const GetWeather = () => {
     if (curUnit === "imperial") {
         return (
             <div className="mainDiv">
+                <button onClick={getPosition}>Click for Weather Information!</button>
                 <div className="dataHolder">
                 <h1>Today's Weather Report for {county} County!</h1>
                 <br />
@@ -74,8 +75,11 @@ const GetWeather = () => {
     } else if (curUnit === "metric") {
         return (
             <div className="mainDiv"> 
+            <button onClick={getPosition}>Click for Weather Information!</button>
             <div className="dataHolder">
+            
                 <h1>Today's Weather Report for {county} County!</h1>
+                
                 <br />
                 <h2>Weather Conditions for the day: {weather}</h2>
                 <h2>Current Temperature: {temp} °C</h2>
