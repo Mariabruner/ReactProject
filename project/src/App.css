@@ -72,8 +72,8 @@ footer p{
 }
 
 .sidebar{
-  display: flex;
-  text-align: right;
+  display:flex;
+  align-items: center!important;
   background-color: #3c6c96;
   margin-top: 10px;
 }
@@ -83,7 +83,7 @@ ul {
 }
 
 .sidebar-list-styling {
-  padding-left: 50px;
+  padding-left: 30px;
   padding-top: 15px;
   width: 20%;
   background-color: #3c6c96;
@@ -98,7 +98,10 @@ ul {
 .sidebar-route{
   flex:1;
   padding: '00px';
+  align-content: center;
+  text-align: center;
 }
+
 .header{
   margin-top: 0.5em!important;
   text-align: center;

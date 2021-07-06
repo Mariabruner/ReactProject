@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 
-import {
-  Card, CardImg, Container
-} from 'reactstrap';
+import {Card, CardImg} from 'reactstrap';
 import './Nasa.css'
+
+
 
 const Nasa = (props) => {
   
   const [lat, setLatitude] = useState()
   const [lon, setLongitude] = useState()
   
-  let key = `Ay4Htt1tlGNl8EwC1oMhuwabaoVUwa2z3K5pTLxo`
-  let url = `https://api.nasa.gov/planetary/earth/imagery?lon=${lon}&lat=${lat}&api_key=${key}`
+  const nasaKey = process.env.REACT_APP_NASA_KEY;
+  let url = `https://api.nasa.gov/planetary/earth/imagery?lon=${lon}&lat=${lat}&api_key=${nasaKey}`
 
 
   function success(pos) {
@@ -38,13 +38,10 @@ const Nasa = (props) => {
   }
   return (
     <div><h1>Satellite Image for your location:</h1>
-    <Container className="themed-container" fluid="md">
-
-      <Card>
-        <CardImg top width="50%" src={url} alt="satelite image" />
-      </Card>
-      </Container>
-      </div>
+    <Card>
+      <CardImg src={url} alt="satelite image"  />
+    </Card>
+    </div>
   )
 
 }
