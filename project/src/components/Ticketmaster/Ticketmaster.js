@@ -39,11 +39,11 @@ const Ticketmaster = () => {
             })
             console.log(results)
     };
-
+    getLocation(lat, lon);
     const handleSubmit = (event) => {
         event.preventDefault();
         setPageNumber(0);
-        getLocation(lat, lon)
+        
         fetchResults(lat, lon);
     };
 
@@ -59,13 +59,13 @@ const Ticketmaster = () => {
         if (direction === 'down') {
             if (pageNumber > 0) {
                 setPageNumber(pageNumber - 1);
-                getLocation(lat, lon)
+                // getLocation(lat, lon)
                 fetchResults(lat, lon)
             }
         }
         if (direction === 'up') {
             setPageNumber(pageNumber + 1);
-            getLocation(lat, lon)
+            // getLocation(lat, lon)
             fetchResults(lat, lon)
         }
     }
