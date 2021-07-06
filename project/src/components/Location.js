@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { render } from "react-dom";
 
@@ -31,4 +32,9 @@ class Location extends Component {
 
 render(<Location />, document.getElementById("root"));
 
+<<<<<<< HEAD
 export default Location;
+=======
+export default App;
+
+>>>>>>> f3bdaa321d74ee748e4427964adf44cfe16c627a
