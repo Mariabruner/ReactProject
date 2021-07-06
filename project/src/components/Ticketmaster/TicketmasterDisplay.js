@@ -1,7 +1,7 @@
 import React from 'react';
 import './Ticketmaster.css'
 import { 
-    Button, Card, CardDeck, CardText, CardBody, CardLink, CardTitle, CardSubtitle, CardImg, CardGroup } from 'reactstrap'
+    Button, Card, CardText, CardBody, CardLink, CardTitle, CardSubtitle, CardImg, CardGroup } from 'reactstrap'
 const EventDisplay = (props) => {
     return(
         <div>
@@ -14,6 +14,7 @@ const EventDisplay = (props) => {
                     <CardBody>
                     <CardTitle tag="h3">{result.name}</CardTitle>
                     <CardSubtitle tag="h5">Date: {result.dates.start.localDate}</CardSubtitle>
+                    <CardText>{result.info}</CardText>
                     </CardBody>
                     
                     <CardBody>

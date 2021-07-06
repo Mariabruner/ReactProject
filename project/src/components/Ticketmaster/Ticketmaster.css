@@ -5,6 +5,7 @@ button {
 
 h1 {
     font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
 
 .form {
@@ -23,3 +24,7 @@ h1 {
     padding: 10px;
 }
 
+.label {
+    text-align: left;
+    font-size: 15px;
+}
