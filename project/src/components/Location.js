@@ -1,34 +1,27 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { useState } from 'react';
+import {Button} from 'reactstrap'
 
+  const App = () => {
+  const [lat, setLat] = useState(null);
+  const [lon, setLon] = useState(null);
+  
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+      
+    })
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-
-      console.log("Latitude is :", position.coords.latitude);
-      const latitude = position.coords.latitude
-      console.log("Longitude is :", position.coords.longitude);
-      const longitude = position.coords.longitude
-      return (latitude, longitude)
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <h4>Using geolocation JavaScript API in React</h4>
-      </div>
-    );
-  }
 }
 
-render(<App />, document.getElementById("root"));
+  return (
+    <div className="App">
+      <Button className="location" color="success" onClick={getLocation}>Get Your Current Location!</Button>
+      {lat && <p>Latitude: {lat}</p>}
+      {lon && <p>Longitude: {lon}</p>}
+    </div>
+  );
+}
 
 export default App;

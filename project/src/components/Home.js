@@ -10,7 +10,7 @@ const Home =() => {
         </p>
         <hr />
         <h1>Your Choices</h1>
-        <h3 className="italicText">Click a link in the menu below!</h3>
+        <h3 className="italicText">Click a link in the menu to the side!</h3>
         <ul>
           <li>
           </li>
