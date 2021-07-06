@@ -1,3 +1,4 @@
+import './Sidebar.css'
 import {
   Route,
   Link,
@@ -6,12 +7,16 @@ import {
 import Nasa from './Nasa';
 import WeatherData from './WeatherData';
 import Ticketmaster from '../components/Ticketmaster/Ticketmaster';
+import Home from './Home'
+
+
 
 const Sidebar = () => {
   return(
     <div className='sidebar'>
       <div className='sidebar-list-styling'>
         <ul className='sidebar-list list-unstyled'>
+        <li><Link to='/home'>Home</Link></li>
         <li><Link to='/nasa'>Nasa</Link></li>
         <li><Link to='/weatherdata'>Weather</Link></li>
         <li><Link to='/Ticketmaster'>Ticketmaster</Link></li>
@@ -19,9 +24,11 @@ const Sidebar = () => {
       </div>
       <div className='sidebar-route'>
         <Switch>
+          <Route exact path='/Home'><Home/></Route>
           <Route exact path='/nasa'><Nasa /></Route>
           <Route exact path='/WeatherData'><WeatherData /></Route>
           <Route exact path='/Ticketmaster'><Ticketmaster /></Route>
+          <Route exact path='/'><Home/></Route>
         </Switch>
       </div>
     </div>
