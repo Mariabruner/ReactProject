@@ -21,9 +21,9 @@ const GetNasaImage = () => {
         fetch(url)
             .then(res => res.json())
             .then( res => {
-                setWeather(res.weather[0].main)
-                console.log(res.main.temp)
-                setFeelsLike(res.main.feels_like)
+                // setWeather(res.weather[0].main)
+                // console.log(res.main.temp)
+                // setFeelsLike(res.main.feels_like)
             })
             .catch( error => {
                 console.log(error)
