@@ -14,6 +14,7 @@ const EventDisplay = (props) => {
                     <CardBody>
                     <CardTitle tag="h3">{result.name}</CardTitle>
                     <CardSubtitle tag="h5">Date: {result.dates.start.localDate}</CardSubtitle>
+                    <CardText>{result.info}</CardText>
                     </CardBody>
                     
                     <CardBody>
