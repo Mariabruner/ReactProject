@@ -1,44 +1,49 @@
 import React, {useState} from 'react'
+
+import {Card, CardImg} from 'reactstrap';
 import './Nasa.css'
-import Location from './Location'
 
 
-const GetNasaImage = () => {
 
-    //const [weather, setWeather] = useState()
-    //const [temp, setTemp] = useState()
-    //const [feelsLike, setFeelsLike] = useState()    
-    //use {feelsLike} in context
-
-    let lat = 39.767
-    let lon = -86.145
-
-    const fetchResults = () => {
-        let key = `&apikey=Ay4Htt1tlGNl8EwC1oMhuwabaoVUwa2z3K5pTLxo`
-        let url = `https://api.nasa.gov/planetary/earth/imagery?lat=${lat}&lon=${lon}&appid=${key}`
+const Nasa = (props) => {
+  
+  const [lat, setLatitude] = useState()
+  const [lon, setLongitude] = useState()
+  
+  const nasaKey = process.env.REACT_APP_NASA_KEY;
+  let url = `https://api.nasa.gov/planetary/earth/imagery?lon=${lon}&lat=${lat}&api_key=${nasaKey}`
 
 
-        fetch(url)
-            .then(res => res.json())
-            .then( res => {
-                // setWeather(res.weather[0].main)
-                // console.log(res.main.temp)
-                // setFeelsLike(res.main.feels_like)
-            })
-            .catch( error => {
-                console.log(error)
-            })
-            
-    }
+  function success(pos) {
+    let lat = pos.coords.latitude
+    let lon = pos.coords.longitude
+    console.log(lat, lon)
 
-    fetchResults()
-    return (
-        <div>
-        <h1>Satellite Image for your location:</h1>
-        <h1>Put image here</h1>
-        </div>
-    )
+    results(lat, lon)
+  }
+
+  function error(err) {
+      console.log(err)
+  }
+
+  function getPosition() {
+      navigator.geolocation.getCurrentPosition(success, error)
+  }
+  getPosition()
+
+
+  const results = (lat, lon) => {
+    setLatitude(lat)
+    setLongitude(lon)
+  }
+  return (
+    <div><h1>Satellite Image for your location:</h1>
+    <Card>
+      <CardImg src={url} alt="satelite image"  />
+    </Card>
+    </div>
+  )
 
 }
 
-export default GetNasaImage;
+export default Nasa
