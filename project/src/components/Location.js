@@ -4,7 +4,6 @@ import {Button} from 'reactstrap'
   const App = () => {
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null);
-  
 
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -25,3 +24,4 @@ import {Button} from 'reactstrap'
 }
 
 export default App;
+

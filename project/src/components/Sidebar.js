@@ -3,9 +3,7 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
-import Home from './Home';
 import Nasa from './Nasa';
-import Location from './Location';
 import WeatherData from './WeatherData';
 import Ticketmaster from '../components/Ticketmaster/Ticketmaster';
 
@@ -14,6 +12,7 @@ const Sidebar = () => {
     <div className='sidebar'>
       <div className='sidebar-list-styling'>
         <ul className='sidebar-list list-unstyled'>
+
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/location'>Location</Link></li>
         <li><Link to='/nasa'>Nasa</Link></li>
