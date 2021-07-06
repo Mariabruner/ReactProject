@@ -27,7 +27,7 @@ const EventDisplay = (props) => {
                     </div>
                 )
 })}
-        <div>     
+        <div className="buttons">     
             <Button color="success"onClick={(e) => props.changePageNumber(e, 'down')}>Previous 10</Button>
             <Button color="info" onClick={(e) => props.changePageNumber(e, 'up')}>Next 10</Button>
         </div>
