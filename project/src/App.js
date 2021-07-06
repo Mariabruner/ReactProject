@@ -2,13 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
-import Location from './components/Location'
-
-
-
+import Home from './components/Home';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+
+
 import {
   BrowserRouter as Router
 } from 'react-router-dom'; 
@@ -17,16 +16,12 @@ import {
 function App() {
   return (
     <div className="App">
-      <Location />
-
- 
-
       <Header/>
       <Router>
+        <Home />
         <Sidebar />
       </Router>
       <Footer />
-
     </div>
   );
 };
