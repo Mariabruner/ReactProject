@@ -1,44 +1,52 @@
 import React, {useState} from 'react'
+
+import {
+  Card, CardImg, Container
+} from 'reactstrap';
 import './Nasa.css'
-import Location from './Location'
+
+const Nasa = (props) => {
+  
+  const [lat, setLatitude] = useState()
+  const [lon, setLongitude] = useState()
+  
+  let key = `Ay4Htt1tlGNl8EwC1oMhuwabaoVUwa2z3K5pTLxo`
+  let url = `https://api.nasa.gov/planetary/earth/imagery?lon=${lon}&lat=${lat}&api_key=${key}`
 
 
-const GetNasaImage = () => {
+  function success(pos) {
+    let lat = pos.coords.latitude
+    let lon = pos.coords.longitude
+    console.log(lat, lon)
 
-    //const [weather, setWeather] = useState()
-    //const [temp, setTemp] = useState()
-    //const [feelsLike, setFeelsLike] = useState()    
-    //use {feelsLike} in context
+    results(lat, lon)
+  }
 
-    let lat = 39.767
-    let lon = -86.145
+  function error(err) {
+      console.log(err)
+  }
 
-    const fetchResults = () => {
-        let key = `&apikey=Ay4Htt1tlGNl8EwC1oMhuwabaoVUwa2z3K5pTLxo`
-        let url = `https://api.nasa.gov/planetary/earth/imagery?lat=${lat}&lon=${lon}&appid=${key}`
+  function getPosition() {
+      navigator.geolocation.getCurrentPosition(success, error)
+  }
+  getPosition()
 
 
-        fetch(url)
-            .then(res => res.json())
-            .then( res => {
-                setWeather(res.weather[0].main)
-                console.log(res.main.temp)
-                setFeelsLike(res.main.feels_like)
-            })
-            .catch( error => {
-                console.log(error)
-            })
-            
-    }
+  const results = (lat, lon) => {
+    setLatitude(lat)
+    setLongitude(lon)
+  }
+  return (
+    <div><h1>Satellite Image for your location:</h1>
+    <Container className="themed-container" fluid="md">
 
-    fetchResults()
-    return (
-        <div>
-        <h1>Satellite Image for your location:</h1>
-        <h1>Put image here</h1>
-        </div>
-    )
+      <Card>
+        <CardImg top width="50%" src={url} alt="satelite image" />
+      </Card>
+      </Container>
+      </div>
+  )
 
 }
 
-export default GetNasaImage;
+export default Nasa

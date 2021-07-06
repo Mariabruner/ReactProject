@@ -2,21 +2,21 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 
 
-class App extends Component {
+class Location extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
     };
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(function(position) {
-
-      console.log("Latitude is :", position.coords.latitude);
-      const latitude = position.coords.latitude
       console.log("Longitude is :", position.coords.longitude);
       const longitude = position.coords.longitude
-      return (latitude, longitude)
+      console.log("Latitude is :", position.coords.longitude);
+      const latitude = position.coords.latitude
+      return (longitude, latitude)
     });
   }
 
@@ -29,6 +29,6 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById("root"));
+render(<Location />, document.getElementById("root"));
 
-export default App;
+export default Location;
