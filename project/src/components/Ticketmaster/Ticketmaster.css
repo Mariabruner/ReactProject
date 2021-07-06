@@ -3,6 +3,10 @@ button {
     margin-right: 20px;
 }
 
+.buttons{ 
+    margin-left: 25%;
+    margin-right:35%;
+}
 h1 {
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
