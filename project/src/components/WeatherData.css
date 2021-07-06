@@ -1,6 +1,12 @@
-a{
-    cursor: pointer;
-    user-select: none;
-    font-size: 10px;
-    margin: 10px;
-  }
+.mainDiv{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family:'Times New Roman', Times, serif
+}
+
+button{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+}

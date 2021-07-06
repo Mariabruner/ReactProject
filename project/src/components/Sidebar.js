@@ -1,3 +1,4 @@
+import './Sidebar.css'
 import {
   Route,
   Link,
@@ -7,6 +8,7 @@ import Nasa from './Nasa';
 import WeatherData from './WeatherData';
 import Ticketmaster from '../components/Ticketmaster/Ticketmaster';
 import Home from './Home'
+
 
 
 const Sidebar = () => {

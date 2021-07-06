@@ -10,6 +10,7 @@ const GetWeather = () => {
     const [weather, setWeather] = useState()
     const [temp, setTemp] = useState()
     const [feelsLike, setFeelsLike] = useState()
+    const [county, setCounty] = useState()
 
     function success(pos) {
         let lat = pos.coords.latitude
@@ -37,9 +38,9 @@ const GetWeather = () => {
             .then(res => res.json())
             .then(res => {
                 setWeather(res.weather[0].main)
-                console.log(res.main)
                 setFeelsLike(res.main.feels_like)
                 setTemp(res.main.temp)
+                setCounty(res.name)
             })
             .catch(error => {
                 console.log(error)
@@ -59,19 +60,23 @@ const GetWeather = () => {
 
     if (curUnit === "imperial") {
         return (
-            <div>
-                <h1>Weather Conditions for the day: {weather}</h1>
-                <h1>Current Temperature: {temp} °F</h1>
-                <h1>Feels Like: {feelsLike} °F</h1>
+            <div className="mainDiv">
+                <h1>Today's Weather Report for {county} County!</h1>
+                <br />
+                <h2>Weather Conditions for the day: {weather}</h2>
+                <h2>Current Temperature: {temp} °F</h2>
+                <h2>Feels Like: {feelsLike} °F</h2>
                 <button onClick={toggleUnits}>Switch to Celsius</button>
             </div>
         )
     } else if (curUnit === "metric") {
         return (
-            <div>
-                <h1>Weather Conditions for the day: {weather}</h1>
-                <h1>Current Temperature: {temp} °C</h1>
-                <h1>Feels Like: {feelsLike} °C</h1>
+            <div className="mainDiv"> 
+                <h1>Today's Weather Report for {county} County!</h1>
+                <br />
+                <h2>Weather Conditions for the day: {weather}</h2>
+                <h2>Current Temperature: {temp} °C</h2>
+                <h2>Feels Like: {feelsLike} °C</h2>
                 <button onClick={toggleUnits}>Switch to Farenheit</button>
             </div>
         )
